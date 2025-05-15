@@ -44,6 +44,10 @@ def main():
             if player.check_collision(a):
                 print("Game Over!")
                 return
+            for s in shots_grp:
+                if s.check_collision(a):
+                    s.kill()
+                    a.split()
 
         keys = pygame.key.get_pressed()
         if keys[pygame.K_SPACE]:
